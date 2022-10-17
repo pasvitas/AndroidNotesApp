@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NotesApplication</string>
+    <string name="titleText">Название заметки</string>
+    <string name="hintNoteText">Сама змаетка</string>
+    <string name="buttonAddNoteText">Добавить заметку</string>
+    <string name="buttonSaveNoteText">Сохранить заметку</string>
+</resources>
