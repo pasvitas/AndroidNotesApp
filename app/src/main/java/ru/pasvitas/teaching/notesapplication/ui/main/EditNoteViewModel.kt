@@ -14,7 +14,7 @@ class EditNoteViewModel : ViewModel() {
         noteUseCase = application.getNoteUseCase()
     }
 
-    fun saveData(id: Long?, title: String, text: String) {
+    suspend fun saveData(id: Long?, title: String, text: String) {
         noteUseCase.saveNote(
             Note(
                 id = id,
@@ -22,5 +22,9 @@ class EditNoteViewModel : ViewModel() {
                 text = text
             )
         )
+    }
+
+    suspend fun deleteData(id: Long) {
+        noteUseCase.deleteNote(id)
     }
 }

@@ -4,21 +4,21 @@ import ru.pasvitas.teaching.notesapplication.model.Note
 
 class NoteRepository(private val noteDAO: NoteDAO) : INoteRepository {
 
-    override fun addNote(note: Note) {
+    override suspend fun addNote(note: Note) {
         noteDAO.saveNote(note.toNoteEntity())
     }
 
-    override fun editNote(note: Note) {
-        noteDAO.saveNote(note.toNoteEntity())
+    override suspend fun editNote(note: Note) {
+        noteDAO.editNote(note.toNoteEntity())
     }
 
-    override fun deleteNote(id: Long) {
-        noteDAO.deleteNote(getNoteById(id).toNoteEntity())
+    override suspend fun deleteNote(id: Long) {
+        noteDAO.deleteNote(id)
     }
 
-    override fun getNoteById(id: Long): Note
+    override suspend fun getNoteById(id: Long): Note
         = noteDAO.getNoteById(id).toNote()
 
-    override fun getAllNotes(): List<Note>
+    override suspend fun getAllNotes(): List<Note>
         = noteDAO.getAllNotes().map { it.toNote() }
 }

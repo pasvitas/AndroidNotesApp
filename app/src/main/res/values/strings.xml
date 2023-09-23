@@ -4,4 +4,5 @@
     <string name="hintNoteText">Сама змаетка</string>
     <string name="buttonAddNoteText">Добавить заметку</string>
     <string name="buttonSaveNoteText">Сохранить заметку</string>
+    <string name="textDeleteNote">Удалить заметку</string>
 </resources>
